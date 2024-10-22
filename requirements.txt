@@ -1,0 +1,6 @@
+Flask
+SQLAlchemy
+mysqlclient
+flask-sqlalchemy
+oauthlib
+apscheduler

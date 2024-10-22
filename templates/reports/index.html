@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Reports</title>
+</head>
+<body>
+    <h1>Uploaded Reports</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Report ID</th>
+                <th>Student Name</th>
+                <th>Download PDF</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for report in reports %}
+            <tr>
+                <td>{{ report.id }}</td>
+                <td>{{ report.student.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

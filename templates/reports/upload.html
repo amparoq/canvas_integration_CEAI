@@ -1,0 +1,14 @@
+<form method="POST" enctype="multipart/form-data" action="/upload_reports">
+    <label for="student_id">Select Student:</label>
+    <select name="student_id" id="student_id" required>
+        <option value="">-- Select a student --</option>
+        {% for student in students %}
+        <option value="{{ student.id }}">{{ student.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="report_pdf">Upload Report (PDF):</label>
+    <input type="file" id="report_pdf" name="report_pdf" accept="application/pdf" required>
+
+    <button type="submit">Upload Report</button>
+</form>
