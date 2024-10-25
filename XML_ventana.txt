@@ -1,0 +1,40 @@
+<cartridge_basiclti_link xmlns="http://www.imsglobal.org/xsd/imslticc_v1p0" 
+    xmlns:blti="http://www.imsglobal.org/xsd/imsbasiclti_v1p0" 
+    xmlns:lticm="http://www.imsglobal.org/xsd/imslticm_v1p0" 
+    xmlns:lticp="http://www.imsglobal.org/xsd/imslticp_v1p0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.imsglobal.org/xsd/imslticc_v1p0 
+    http://www.imsglobal.org/profile/lticp_v1p0/imslticc_v1p0.xsd">
+    
+    <blti:title>Enviar todas las entregas</blti:title>
+    <blti:description>Una vista en la tarea que permite enviar todas las entregas a una app externa.</blti:description>
+    <blti:launch_url>https://1b70-200-83-115-146.ngrok-free.app/lti_launch</blti:launch_url>
+    
+    <!-- Claves de autenticación -->
+    <blti:consumer_key>consumer-key</blti:consumer_key>
+    <blti:shared_secret>secret-key</blti:shared_secret>
+    
+    <!-- Envío de parámetros personalizados -->
+    <blti:custom>
+        <blti:custom_field name="custom_course_id" value="$Course.id"/>
+        <blti:custom_field name="custom_assignment_id" value="$Canvas.assignment.id"/>
+    </blti:custom>
+
+    <!-- Configurar la herramienta para la vista del assignment -->
+    <blti:extensions platform="canvas.instructure.com">
+        <lticm:property name="privacy_level">public</lticm:property>
+        <lticm:property name="tool_id">lti_tool</lticm:property>
+
+        <!-- Mostrar el botón en la vista de la tarea -->
+        <lticm:options name="assignment_view">
+            <lticm:property name="enabled">true</lticm:property>
+            <lticm:property name="url">https://1b70-200-83-115-146.ngrok-free.app/lti_launch</lticm:property> <!-- Lanza tu vista HTML -->
+            <lticm:property name="text">Ver detalles del Assignment</lticm:property>
+            <lticm:property name="visibility">admins,instructors</lticm:property> <!-- Visible solo para administradores e instructores -->
+        </lticm:options>
+    </blti:extensions>
+</cartridge_basiclti_link>
+
+
+custom_course_id=$Canvas.course.id
+custom_assignment_id=$Canvas.assignment.id

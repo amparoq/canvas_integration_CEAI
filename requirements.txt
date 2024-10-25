@@ -3,4 +3,4 @@ SQLAlchemy
 mysqlclient
 flask-sqlalchemy
 oauthlib
-apscheduler
+schedule
