@@ -4,3 +4,4 @@ mysqlclient
 flask-sqlalchemy
 oauthlib
 schedule
+requests
