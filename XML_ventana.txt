@@ -8,7 +8,7 @@
     
     <blti:title>Enviar todas las entregas</blti:title>
     <blti:description>Una vista en la tarea que permite enviar todas las entregas a una app externa.</blti:description>
-    <blti:launch_url>https://127.0.0.1:5000/lti_launch</blti:launch_url>
+    <blti:launch_url>http://127.0.0.1:5000/lti_launch</blti:launch_url>
     
     <!-- Claves de autenticación -->
     <blti:consumer_key>consumer-key</blti:consumer_key>
@@ -28,7 +28,7 @@
         <!-- Mostrar el botón en la vista de la tarea -->
         <lticm:options name="assignment_view">
             <lticm:property name="enabled">true</lticm:property>
-            <lticm:property name="url">https://127.0.0.1:5000/lti_launch</lticm:property> <!-- Lanza tu vista HTML -->
+            <lticm:property name="url">http://127.0.0.1:5000/lti_launch</lticm:property> <!-- Lanza tu vista HTML -->
             <lticm:property name="text">Ver detalles del Assignment</lticm:property>
             <lticm:property name="visibility">admins,instructors</lticm:property> <!-- Visible solo para administradores e instructores -->
         </lticm:options>
